@@ -9,18 +9,22 @@ body {
 
 .left-panel {
 	background-color: blueviolet;
-	grid-row-start: 1;
-	grid-row-end: 3;
+	min-width: 200px;
 }
 
 .right-panel {
-	background-color: red;
+	display: flex;
+	flex-direction: column;
+}
+
+.top-panel {
+	height: 20%;
+	min-height: 30px;
 }
 
 .page {
 	display: grid;
 	grid-template-columns: 0.2fr 0.8fr;
-	grid-template-rows: 0.2fr 0.8fr;
 	min-height: 100vh;
 }
 
@@ -33,6 +37,12 @@ body {
 	font-size: 1rem;
 	border-radius: 20px;
 	padding: 20px;
+}
+
+#score {
+	padding-left: 10px;
+	height: 20%;
+	min-height: 30px;
 }
 
 #history {
@@ -55,4 +65,10 @@ body {
 	border: 2px solid red;
 	background-color: #ffcad4;
 	opacity: 0;
+}
+
+#life {
+	position: relative;
+	top: 20px;
+	width: 100%;
 }

@@ -1,9 +1,11 @@
 var historyArray = [];
+var score = 0;
 var errors = {
     "used": "This word had been used.",
     "notExist": "This word is not existed.",
     "typo": "Lovwercase letter only!",
-    "letterRule": "Your answer must starts with "
+    "letterRule": "Your answer must starts with ",
+    "lenRule": "At least 3-letter word allowed."
 }
 
 // Get Element
@@ -11,11 +13,13 @@ var wordBox = document.getElementById("word");
 var textBox = document.getElementById("input-text");
 var historyBox = document.getElementById("history");
 var notificationBox = document.getElementById("notification");
+var scoreBox = document.getElementById("score");
 
 
 init();
 
 async function init() {
+    scoreBox.innerText = `Điểm: ${score}`;
     await loadCSV();
     console.log("Generated");
 
@@ -32,19 +36,26 @@ async function init() {
 textBox.addEventListener("keypress", (event) => {
     if (event.key == "Enter") {
         var text = textBox.value;
-        if (containsOnlyLowercase(text)) {
-            let givenLetter = wordBox.innerText[wordBox.innerText.length - 1];
-            if (givenLetter == text[0]) {
-                if (inputWord(text)) {
-                    generateWord(text);
+        if (text.len >= 3) {
+            if (containsOnlyLowercase(text)) {
+                let givenLetter = wordBox.innerText[wordBox.innerText.length - 1];
+                if (givenLetter == text[0]) {
+                    if (inputWord(text)) {
+                        generateWord(text);
+                        score += (text.length - 2);
+                        scoreBox.innerText = `Điểm: ${score}`;
+                    }
+                } else {
+                    notify(errors.letterRule + `'${givenLetter}'.`);
                 }
-            } else {
-                notify(errors.letterRule + `'${givenLetter}'.`);
             }
+            else {
+                notify(errors.typo);
+            }
+        } else {
+            notify(errors.lenRule);
         }
-        else {
-            notify(errors.typo);
-        }
+        
     }
 });
 
