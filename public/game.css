@@ -3,7 +3,7 @@ html {
 	font-weight: 400;
 	font-style: normal;
 	font-size: 30px;
-	height: 100%;
+	height: 100vh;
 }
 
 body {
@@ -14,6 +14,7 @@ body {
 .left-panel {
 	background-color: blueviolet;
 	min-width: 200px;
+	height: 100vh;
 }
 
 .right-panel {
@@ -47,12 +48,17 @@ body {
 
 #score {
 	padding-left: 10px;
-	height: 20%;
-	min-height: 30px;
+	height: 5vh;
 }
 
 #history {
 	padding-left: 10px;
+	height: 83vh;
+	overflow: auto;
+}
+
+#history::-webkit-scrollbar {
+	width: 8px;
 }
 
 #answer-container {

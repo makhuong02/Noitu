@@ -48,6 +48,7 @@ textBox.addEventListener("keypress", (event) => {
                 if (givenLetter == text[0]) {
                     if (inputWord(text)) {
                         generateWord(text);
+                        resetTimer();
                         score += (text.length - 2);
                         scoreBox.innerText = `Score: ${score}`;
                     }
