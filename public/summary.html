@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./index.css" />
+
+		<style>
+			body {
+				display: flex;
+				flex-direction: column;
+			}
+		</style>
+
+		<script>
+			function menuClicked() {
+				window.location.href = "/";
+			}
+		</script>
+
+		<title>Nối từ</title>
+	</head>
+	<body>
+		<div>
+			<p id="score">Score:</p>
+			<p id="highScore">High score:</p>
+		</div>
+		<div class="button container" onclick="menuClicked()">Main menu</div>
+
+		<script>
+			let score = sessionStorage.getItem("score");
+			let highScore = localStorage.getItem("highScore");
+
+			document.getElementById("score").innerText = `Score: ${score}`;
+			document.getElementById(
+				"highScore"
+			).innerText = `High score: ${highScore}`;
+		</script>
+	</body>
+</html>
