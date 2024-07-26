@@ -8,6 +8,7 @@ Welcome to the **Word Connection Game** project! This is a simple game where pla
 - [Setup](#setup)
 - [Usage](#usage)
 - [Notes](#notes)
+- [Reference](#reference)
 
 ## Introduction
 
@@ -20,13 +21,13 @@ To run the project on your local machine, follow these steps:
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/username/repository.git
+   git clone https://github.com/makhuong02/Noitu.git
    ```
 
 2. **Navigate to the project directory**:
 
    ```bash
-   cd repository
+   cd your-address-to-my-Noitu
    ```
 
 3. **Install dependencies**:
@@ -55,5 +56,9 @@ To run the project on your local machine, follow these steps:
 
 - Ensure you have **Node.js** installed before running the project.
 - If you encounter any issues, please open a new issue on GitHub for support.
+
+## Reference
+
+Thanks to [benjihillard](https://github.com/benjihillard/English-Dictionary-Database) for the English dictionary.
 
 Thank you for checking out my project!
